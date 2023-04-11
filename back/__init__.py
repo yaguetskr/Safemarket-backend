@@ -16,18 +16,11 @@ except Exception as e:
     # Atrapar error
     print("Ocurrió un error al conectar a SQL Server: ", e)
 
-try:
-    with conexion.cursor() as cursor:
-        # En este caso no necesitamos limpiar ningún dato
-        cursor.execute("SELECT *,FORMAT(price, 'N2') as price FROM Productos;")
 
-        # Con fetchall traemos todas las filas
-        products = cursor.fetchall()
 
 
 except Exception as e:
     print("Ocurrió un error al consultar: ", e)
-finally:
-    conexion.close()
+
 
 from back import routes
