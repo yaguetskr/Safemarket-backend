@@ -1,6 +1,10 @@
-from flask import Flask
+from flask import *
+
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'dfasjklhfdsjkaghb'
+
 
 import pyodbc
 
